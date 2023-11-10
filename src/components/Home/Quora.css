@@ -1,0 +1,5 @@
+.quora{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241,241,241);
+}

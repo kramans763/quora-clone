@@ -1,0 +1,1 @@
+export const incrasync = innerDispatch => innerDispatch({ type: 'INCREMENT' })

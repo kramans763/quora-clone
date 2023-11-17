@@ -3,3 +3,13 @@
     flex-direction: column;
     background-color: rgb(241,241,241);
 }
+.main-content{
+    display: flex;
+    justify-content: space-around;
+}
+.sidebar-home{
+   width: 20%;
+}
+.feeds{
+    width: 70%;
+}

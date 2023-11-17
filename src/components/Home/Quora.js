@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import "./Quora.css";
 import Sidebar from '../Sidebar/Sidebar'
+import Feed from '../Feed/Feed';
 
 const Quora = () => {
   return (
@@ -9,11 +10,14 @@ const Quora = () => {
         <div className='navbar-home'>
            <Navbar/>
         </div>
-        <h3>Aman</h3>
-        <div className='sidebar-home'>
-           <Sidebar/>
+        <div className='main-content'>
+          <div className='sidebar-home'>
+            <Sidebar/>
+          </div>
+          <div className='feeds'>
+             <Feed/>
+          </div>
         </div>
-        
     </div>
   )
 }

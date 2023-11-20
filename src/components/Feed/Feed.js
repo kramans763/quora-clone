@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import "./Feed.css"
 const Feed = () => {
    const[feedDetails,setFeedDetails]=useState([]);
 
@@ -26,15 +26,17 @@ const Feed = () => {
                 <div className='card'>
                   <div className='card-upper'>
                     <img src={item.author.profileImage}/>
-                    <div upper-right>
+                    <div className='upper-right'>
                       <h6>{item.author.name}</h6>
-                      <p>dfgghhjjkkkkkkkkkkkkkkkkkkkkkkk</p>
-                      
+                      <p>{item.channel.name}</p>
+
                     </div>
                     
                   </div>  
                   
                   <h3>{item.title}</h3>
+                  <p>{item.content}</p>
+                  <img src={item.channel.image} alt="ann" />
                 </div>
             )
         })

@@ -1,0 +1,25 @@
+.main-feed{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.5);
+    gap: 10px;
+}
+.card-upper{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+.card-upper img{
+    height: 30px;
+    border-radius: 50%;
+}
+.upper-right{
+    display: flex;
+    flex-direction: column;
+}

@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import "./Quora.css";
 import Sidebar from '../Sidebar/Sidebar'
 import Feed from '../Feed/Feed';
+import AdImg from '../../assets/advertisement.png'
 
 const Quora = () => {
   return (
@@ -16,6 +17,9 @@ const Quora = () => {
           </div>
           <div className='feeds'>
              <Feed/>
+          </div>
+          <div className='advertisement'>
+            <img src={AdImg} alt="ad" />
           </div>
         </div>
     </div>

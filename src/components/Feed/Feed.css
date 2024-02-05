@@ -9,6 +9,7 @@
     background-color: white;
     box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.5);
     gap: 10px;
+    padding-left: 5px;
 }
 .card-upper{
     display: flex;
@@ -22,4 +23,29 @@
 .upper-right{
     display: flex;
     flex-direction: column;
+}
+.card-details{
+    display: flex;
+    flex-direction: column;
+}
+.like-comment{
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    font-size: large;
+}
+.upvote{
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+.downvote{
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+.comments{
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
 }

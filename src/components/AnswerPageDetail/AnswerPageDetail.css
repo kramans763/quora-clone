@@ -1,0 +1,11 @@
+.answer-page{
+    margin-top: 40px;
+    background-color: white;
+}
+.answer-page-top{
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}

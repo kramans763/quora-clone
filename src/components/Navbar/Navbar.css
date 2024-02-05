@@ -26,8 +26,9 @@
     color: grey;
     cursor: pointer;
     font-size: 35px;
-    
+    position: relative;
 }
+
 .qheader-icon > .MuiSvgIcon-root:hover{
     color: #8f1f1b;
     border-radius: 10px;
@@ -64,6 +65,7 @@
 }
 .qheader-rem > .qheader-avatar{
     cursor: pointer;
+    position: relative;
 }
 .qheader-rem > .MuiSvgIcon-root{
     font-size: xx-large;
@@ -88,3 +90,39 @@
     color: white;
     background: #8f1f1b;
 }
+
+
+  
+  .user-info-popup {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    gap: 5px;
+    
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap;
+   
+  }
+  .user-info-popup button{
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 5px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+ 

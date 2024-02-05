@@ -1,19 +1,31 @@
+
+
 const initialState = {
-    count: 0
+    posts:[],
   };
   
   const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case "INCREMENT":
-        return {
-          count: state.count + action.payload
-        };
-      case "DECREMENT":
-        return {
-          count: state.count - 1
-        };
+      
+      case "GETPOSTS":
+        return{
+          ...state,
+          posts: action.posts,
+        }
+      case "GETCHANNELS":
+        return{
+          ...state,
+          channels:action.channels,
+        } 
+      case "SETPOSTS":
+        console.log("poooo",action.posts)
+        return{
+          ...state,
+          posts:[...action.posts],
+          }  
       default:
         return state;
     }
   };
+ 
   export default reducer;

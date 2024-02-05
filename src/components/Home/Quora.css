@@ -16,19 +16,19 @@
 }
 .feeds{
     width: 55%;
-    padding-left: 50px;
-    
+    padding-left: 30px;
+ 
 }
 .advertisement{
-    width: 20%;
-    
+    width: 20%;  
     position: fixed;
     right: 0;
     bottom: 0;
     top: 60px;
     
-}
-/* .advertisement img{
-    object-fit:cover;
     
-} */
+}
+.advertisement img{
+    padding-right: 20px;
+    
+}

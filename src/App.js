@@ -2,22 +2,29 @@ import React from 'react';
 import './App.css';
 import Quora from './components/Home/Quora';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement } from './Action';
-import { increment } from './Action';
+import { Route, Routes } from 'react-router-dom';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import AddQuestion from './components/AddQuestion/AddQuestion';
+import UnderConstruction from './components/UnderConstruction/UnderConstruction';
+import Answer from './components/Answer/Answer';
+import AnswerPageDetail from './components/AnswerPageDetail/AnswerPageDetail';
+
+
 
 function App() {
-  const count = useSelector((state) => state.count);
   const dispatch = useDispatch() ;
   return (
     <div className="App">
-      {/* <main className="Counter">
-      <p className="count">{count}</p>
-      <section className="controls">
-        <button onClick={() => dispatch(increment())}>Increment</button>
-        <button onClick={() => dispatch(decrement())}>Decrement</button>
-      </section>
-    </main> */}
-       <Quora/> 
+      <Routes>
+        <Route path='/' element={<Quora/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/signup' element={<SignUp/>}></Route>
+        <Route path='/addQues' element={<AddQuestion/>}></Route>
+        <Route path='/working' element={<UnderConstruction/>}></Route>
+        <Route path='/answer' element={<Answer/>}></Route>
+        <Route path='/pagedetail/:id' element={<AnswerPageDetail/>}></Route>
+      </Routes>
     </div>
   );
 }

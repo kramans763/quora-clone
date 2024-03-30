@@ -78,13 +78,13 @@ return (
           </div>
 
           <div className="leftSideBtn">
-          <GoogleLogin
+          {/* <GoogleLogin
           clientId="671348139606-906f7lcl8vk6l26hivc1ka0hk2teuvb1.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
           cookiePolicy={"single_host_origin"}
-         />
+         /> */}
             {/* <button
               type="submit"
               className="loginBttn googleBttn"

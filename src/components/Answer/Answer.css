@@ -1,24 +1,63 @@
+
+.answer-page{
+  display: flex;
+  width: 85%;
+  gap: 20px;
+  margin: auto;
+  padding: 60px 10px;
+
+ 
+}
+.answer-page-left{
+   flex: 0.5;
+   
+   
+}
+.answer-page-left-top{
+   padding-bottom: 10px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   font-weight: 600;
+   cursor: pointer;
+   margin-top: 15px;
+   padding-left: 15px;
+}
+.answer-page-left-bottom{
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   font-size: 14px;
+   margin-top: 10px;
+   font-weight: 500;
+   gap: 3px;
+}
+.answer-page-left-bottom p{
+  padding: 5px 15px;
+}
+.answer-page-left-bottom p:hover{
+  background-color: #D4D4D8 ;
+  border-radius: 5px;
+}
+.answer-page-left-bottom p:first-child{
+  color: #BF1C1C;
+  background-color: #eadeea;
+  border-radius: 5px;
+}
+
+
 .answers{
     display: flex;
     flex-direction: column;
-    padding: 10px 10px;
-    margin-top: 100px;
     background-color: white;
-    min-height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    font-size: 18px;
-
-    
+    padding: 10px;
+    font-size: 18px;   
+    flex: 1.8;
 }
 .answer-heading{
     display: flex;
     justify-content: start;
-    padding: 15px 10px;
+    padding: 15px 5px;
     gap: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    /* font-size: 15px; */
     font-weight: 500;
     
 }
@@ -30,96 +69,89 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 10px;
 }
 .answer-card{
     display: flex;
     flex-direction: column; 
     
 }
-.answer-card h2{
-    cursor: pointer;
-    
+.answer-card h5{
+    cursor: pointer;   
 
 }
-.answer-card h2:hover{
-    border-bottom: 2px solid black; 
+.answer-card h5:hover{
+    border-bottom: 1px solid black; 
     
 }
-.answer-card button{
-    margin-top: 10px;
-    
-    width:fit-content;
-    padding: 10px 30px;
-    border-radius: 20px;
+.answer-card-buttom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.answer-button{
+    display: flex;
+    gap: 3px;
+    padding: 5px 20px;
+    border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.3) ;
     cursor: pointer;
-
-}
-
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
-    display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 99999;
-  }
+}
+.answer-page-right{
+  flex: 0.6 ;
   
-  .popup-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: white;
-    width: 60%;
-    height: 100vh;
-    padding-left:  10px;
-    padding-top: 20px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    font-size: 18px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a pop-up effect */
-  }
+  padding: 10px;
+  height: auto;
   
- 
-.popup-close{
-    cursor: pointer;
+}
+.answer-page-right-top{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  cursor: pointer;
+}
+.answer-page-right-bottom{
+  margin-top: 15px;
+   display: flex;
+   background-color: white;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 10px;
+   padding: 20px 5px;
+}
+.answer-page-right-bottom-para2{
+  font-size: 12px;
+  text-align: center;
+}
+.answer-page-right-bottom img{
+   width: 48px;
+   height: 48px;
    
 }
-  .popup-user-details{
-      display: flex;
-      justify-content: start;
-      gap: 10px;
+.answer-page-right-bottom button{
+    color: #2563EB ;
+    background-color: white;
+    padding: 6px 12px;
+    border: 1px solid #2563EB;
+    border-radius:30px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+@media (max-width: 1048px){
+  .answer-page-right{
+    display: none;
   }
-  .popup-user-details img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  .answer-page-left{
+    padding-top: 50px;
   }
-  .popup-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-    gap: 20px;
+  .answers{
+    padding-top: 50px;
   }
-  .popup-content input{
-    border: none;
-    padding: 20px 2px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3) ;
-    width: 100%;
-  }
-  .popup-btn{
-    border: none;
-    padding: 8px 20px;
-    background-color: darkblue;
-    color: white;
-    border-radius: 8px;
-    width: fit-content;
-    align-self:flex-end;
-    margin-right: 30px;
-    
-  }
+}

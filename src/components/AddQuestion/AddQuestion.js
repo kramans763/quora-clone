@@ -58,7 +58,7 @@ const AddQuestion = () => {
   return (
     <div >
       <Navbar/>
-      <div className='add-question'>
+      <div className='add-question dark:bg-neutral-800 dark:text-zinc-400'>
         <div  className= 'add-question-heading' >
             <h2>Add Question</h2>
         </div>

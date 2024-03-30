@@ -4,9 +4,13 @@ import starLogo from "../../assets/star2.png"
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts } from '../../Action';
 import "./Answer.css";
-import userPic from "../../assets/user.png"
-import CloseIcon from '@mui/icons-material/Close';
+
+
 import { useNavigate } from 'react-router-dom';
+import {SlNote} from 'react-icons/sl';
+import { BiSolidDownvote } from "react-icons/bi";
+import { GoPencil } from "react-icons/go";
+import PostAnswer from '../PostAnswer/PostAnswer';
 
 const Answer = () => {
     const quesDetails = useSelector((state) => state.reducer.posts);
@@ -15,8 +19,10 @@ const Answer = () => {
     const userData = JSON.parse(localStorage.getItem('userData'));
     const [selectedTitle, setSelectedTitle] = useState('');
     const [selectedId, setSelectedId] = useState('');
-    const [newAnswer,setNewAnswer] = useState('');
+    const [activeDownvotes, setActiveDownvotes] = useState({});
     const navigate=useNavigate();
+    const authToken = localStorage.getItem('authToken');
+
  
     console.log("qdet", quesDetails);
    
@@ -36,89 +42,90 @@ const Answer = () => {
         setPopupOpen(false);
       };
 
-      const postAnswer = async () => {
-        try {
-          const response = await fetch(`https://academics.newtonschool.co/api/v1/quora/comment/${selectedId}`, {
-            method: 'POST',
-            headers: {
-              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTkxYmQyOTlmZGI5ZjlkMTU3MjBiMSIsImlhdCI6MTcwNDU1MjM5NSwiZXhwIjoxNzM2MDg4Mzk1fQ.ggf4vLjLK8t8mybc3l7sRajbq9UGOSoO6dhGTrSm1vY',
-              'projectID': 'f104bi07c490',
-              'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify({
-              content: newAnswer,
-            }),
-          });
-    
-          if (response.ok) {
-            alert('Answer posted successfully');
-            dispatch(getPosts());
-          } else {
-            alert('Failed to post answer');
-          }
-        } catch (error) {
-          console.error('Error posting answer:', error);
-        } finally {
-          closePopup();
-        }
+      const dislike = (id) => {
+        setActiveDownvotes(prevState => ({
+          ...prevState,
+          [id]: !prevState[id] // Toggle the active state for the specific ID
+        }));
       };
 
       const handlePageDetail=(id, title)=>{
         const updatedTitle=title.toLowerCase().replaceAll(" ", "-");
 
-         navigate(`/pagedetail/${updatedTitle}` , { state: {id} } );
+         navigate(`/pagedetail/${updatedTitle}` , { state: {id , title} } );
       }
-
+      const handleUnderConstruction =()=>{
+        navigate('/working')
+      }
   return (
-         <>
-           <Navbar/>
-           <div className='answers'>
-             <div className='answer-heading'>
+         <div className='dark:bg-neutral-900 dark:text-zinc-400'>
+            <Navbar/>
+           <div className='answer-page '>
+             <div className='answer-page-left'>
+               <div className='answer-page-left-top'>
+                  <p>Questions</p>
+               </div>
+               <div className='answer-page-left-bottom'>
+                  <p>Questions For You</p>
+                  <p onClick={handleUnderConstruction}>Answer request</p>
+                  <p onClick={handleUnderConstruction}>Drafts</p>
+               </div>
+             </div>
+             <div className='answers dark:bg-neutral-800 dark:text-zinc-400 '>
+              <div className='answer-heading'>
                 <img src={starLogo}/>
                 <p>Questions for you</p>
              </div>
              <div className='answers-list'>
               { quesDetails && quesDetails.length
-                 && quesDetails.map((item)=>{
+                 && quesDetails.slice(-5).map((item)=>{
                     return(
                         <div className='answer-card'>
                             <div onClick={() =>handlePageDetail(item._id, item.title)}>
-                            <h2>{item.title}</h2>
+                              <h5>{item.title}</h5>
                             </div>
-                            <p>{item.commentCount} answers</p>
-                            <button onClick={() => openPopup(item.title, item._id)}>Answer</button>
+                            <div className='answer-card-buttom'>
+                                <div className='answer-button' onClick={() => openPopup(item.title, item._id)}>
+                                  <SlNote/>
+                                  <p>Answer</p>
+                                </div>
+                                <div className={`downvote ${activeDownvotes[item._id] ? 'active' : ''}`} onClick={() => dislike(item._id)} >
+                                  <BiSolidDownvote/>
+                                </div>
+                            </div>
+                            
+                            
                         </div>
                     )
                  })
               }
              </div>
            </div >
+            <div className='answer-page-right '>
+                 <div className='answer-page-right-top' onClick={handleUnderConstruction}>
+                  <p>Topics you know about</p>
+                  <GoPencil/>
+                 </div>
+                 <div className='answer-page-right-bottom  dark:bg-neutral-800 dark:text-zinc-400'>
+                  <img src="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.empty_states.dormant_lightmode.png-26-c4532c98034818a0.png" alt="" />
+                  <p>No topics yet</p>
+                  <p className='answer-page-right-bottom-para2'>You’ll get better questions if you add more specific topics.</p>
+                  <button onClick={handleUnderConstruction}>Add Topics</button>
+                 </div>
+            </div>
            {isPopupOpen && (
-             <div className='popup-overlay'>
-               <div className='popup-content'>
-                   <div className='popup-close' onClick={closePopup}>
-                      <CloseIcon/>
-                   </div>
-                  <div className='popup-user-details'>
-                    <img src={userPic} alt="" />
-                    <h3>{userData.name}</h3>
-                  </div>
-                  
-                    <h2>{selectedTitle}</h2>
-          
-                  <div className='popup-form'>
-                    <input type="text" 
-                           placeholder='Write your Answer'
-                           value={newAnswer}
-                           onChange={(e) => setNewAnswer(e.target.value)}
-                    />
-                    <button className='popup-btn' onClick={postAnswer} >Post</button>
-                  </div>
-                  
-               </div>
-              </div>
+             <PostAnswer
+             isOpen={isPopupOpen}
+             onClose={closePopup}
+             title={selectedTitle}
+             userData={userData}
+             authToken={authToken}
+             selectedId={selectedId}
+           />
+        
             )}
-         </>
+          </div>
+        </div>
   )
 }
 

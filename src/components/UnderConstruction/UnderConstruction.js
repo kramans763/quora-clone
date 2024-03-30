@@ -9,7 +9,7 @@ const UnderConstruction = () => {
   };
   return (
     <>
-    <div className="constuction-page">
+    <div className="constuction-page dark:bg-neutral-900 dark:text-zinc-400">
       <img src={underConstImg} alt="gif" />
       <h1 className="header-construction">Page Is Under Construction</h1>
       <div className="construction-button-container">

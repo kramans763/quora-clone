@@ -6,6 +6,8 @@
     min-height: 100vh;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     align-items: center;
+    width: 70%;
+    margin: auto;
     
 }
 .add-question-heading {
@@ -56,4 +58,9 @@
     border-radius: 20px;
     padding: 8px;
     border: none;
+}
+@media (max-width: 1048px){
+    .add-question{
+        padding-top: 130px;
+    }
 }

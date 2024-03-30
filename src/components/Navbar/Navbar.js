@@ -12,7 +12,7 @@ import { HiUserGroup } from "react-icons/hi";
 import { PiCaretDown } from "react-icons/pi";
 
 import {  Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import signTick from "../../assets/signTick.jpg"
@@ -26,6 +26,7 @@ import MobileNavbarTop from '../MobileNavbar/MobileNavbarTop';
 
 const Navbar = () => {
   const navigate=useNavigate();
+  const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
   const [showUserInfo, setShowUserInfo] = useState(false);
@@ -33,11 +34,35 @@ const Navbar = () => {
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
-  const darkMode = useSelector((state) => state.darkMode);
+  const [lastClickedIcon, setLastClickedIcon] = useState(null);
 
-  const handleDarkModeToggle = () => {
-    dispatch(toggleDarkMode());
+  useState(() => {
+    const currentPath = location.pathname;
+    switch (currentPath) {
+      case '/':
+        setLastClickedIcon('home');
+        break;
+      case '/following':
+        setLastClickedIcon('following');
+        break;
+      case '/answer':
+        setLastClickedIcon('answer');
+        break;
+      case '/spaces':
+        setLastClickedIcon('spaces');
+        break;
+      case '/notifications':
+        setLastClickedIcon('notifications');
+        break;
+      default:
+        break;
+    }
+  }, [location]);
+
+   const handleIconClick = (iconName) => {
+    setLastClickedIcon(iconName);
   };
+ 
 
   useEffect(() => {
     
@@ -64,6 +89,7 @@ const Navbar = () => {
     setShowUserInfo(!showUserInfo);
   };
   const handleAnswerComp=()=>{
+    handleIconClick('answer');
     navigate('/answer')
   }
   const handleProfile=()=>{
@@ -74,18 +100,23 @@ const Navbar = () => {
     navigate('/addQues')
   }
   const handleHome =()=>{
+    handleIconClick('home');
     navigate('/')
   }
   const handleSpaces=()=>{
+    handleIconClick('spaces');
     navigate('/spaces');
   }
   const handleNotificationPage=()=>{
+    handleIconClick('notifications');
     navigate('/notifications')
   }
   const handleFollowing=()=>{
+    handleIconClick('following');
     navigate('/following');
   }
   const handleUnderConstruction =()=>{
+    handleIconClick('working');
     navigate('/working')
   }
   const toggleLanguagePopup = () => {
@@ -116,20 +147,20 @@ const Navbar = () => {
             <img src="https://seeklogo.com/images/Q/quora-logo-2E2DD559F2-seeklogo.com.png" alt="" />
         </div>
         <div className='qheader-icons'>
-            <div className='qheader-icon' onClick={handleHome}>
+            <div  className={`qheader-icon ${lastClickedIcon === 'home' ? 'clicked' : ''}`} onClick={handleHome}>
               <BiSolidHome/>
             </div>
-            <div className='qheader-icon' onClick={handleFollowing}>
+            <div className={`qheader-icon ${lastClickedIcon === 'following' ? 'clicked' : ''}`} onClick={handleFollowing}>
               <IoIosListBox/>
             </div>
-            <div className='qheader-icon' onClick={handleAnswerComp}>
+            <div  className={`qheader-icon ${lastClickedIcon === 'answer' ? 'clicked' : ''}`} onClick={handleAnswerComp}>
              <SlNote/>
             </div>
-            <div className='qheader-icon' onClick={handleSpaces}>
+            <div className={`qheader-icon ${lastClickedIcon === 'spaces' ? 'clicked' : ''}`} onClick={handleSpaces}>
               <HiUserGroup/>
              
             </div>
-            <div className='qheader-icon' onClick={handleNotificationPage}>
+            <div className={`qheader-icon ${lastClickedIcon === 'notifications' ? 'clicked' : ''}`} onClick={handleNotificationPage}>
               <IoNotificationsOutline/>
             
             </div>

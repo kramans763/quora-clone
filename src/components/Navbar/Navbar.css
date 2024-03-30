@@ -43,7 +43,9 @@
     padding: 2px 5px;
     
 }
-
+.qheader-icon.clicked{
+   color: #991B1B;
+}
 .qheader-icon:hover{
  
     background-color: lightgray;
@@ -161,6 +163,7 @@
     height: 20px;
     border-radius: 50%;
   }
+
 
   @media (max-width: 1048px) {
    

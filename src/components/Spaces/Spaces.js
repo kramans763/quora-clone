@@ -131,8 +131,8 @@ const Spaces = () => {
                 <p>Include a few keywords to show people what to expect if they join.</p>
                 <input
 
-                  value={description}
-                  onChange={(e) => {
+                   value={description}
+                   onChange={(e) => {
                     setDescription(e.target.value);
                     toggleButton(); 
                   }}

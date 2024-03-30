@@ -33,8 +33,11 @@
     font-weight: 400;
     display: flex;
     gap: 4px;
-
+    cursor: pointer;
     
+}
+.channel-name:hover{
+    background-color: #E4E6E6;
 }
 .channel-name img{
     width: 28px;

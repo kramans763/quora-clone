@@ -1,8 +1,6 @@
-import { GETPOSTS, GETCHANNELS, SETPOSTS,TOGGLE_DARK_MODE  } from "./Constants";
+import { GETPOSTS, GETCHANNELS, SETPOSTS  } from "./Constants";
 
-export const toggleDarkMode = () => ({
-  type: TOGGLE_DARK_MODE
-});
+
 
 export const getPosts= () =>{
   return async (dispatch) =>{

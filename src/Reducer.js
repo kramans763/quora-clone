@@ -1,8 +1,8 @@
-import { GETPOSTS, GETCHANNELS, SETPOSTS, TOGGLE_DARK_MODE } from "./Constants";
+import { GETPOSTS, GETCHANNELS, SETPOSTS } from "./Constants";
 const initialState = {
     posts:[],
     channels: [],
-    darkMode: false
+    
   };
   
   const reducer = (state = initialState, action) => {
@@ -24,11 +24,7 @@ const initialState = {
           ...state,
           posts:[...action.posts],
           } 
-      case TOGGLE_DARK_MODE:
-        return {
-          ...state,
-          darkMode: !state.darkMode 
-        };    
+         
       default:
         return state;
     }

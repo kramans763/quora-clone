@@ -56,10 +56,7 @@
     padding: 5px 15px;
     width: fit-content;
 }
-.userComponent-follow-btn.following p{
-   
-    
-}
+
 .userComponent-right{
    display: flex;
    flex-direction: column;

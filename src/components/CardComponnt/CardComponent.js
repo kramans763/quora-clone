@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const CardComponent = ({ pageType, item,  userData}) => {
-    const { author, content, channel, title, likeCount, commentCount, _id } = item;
+    const { author, content,  title, likeCount, commentCount, _id } = item;
     const [likes, setLikes] = useState(likeCount || 0);
     const [upVote, setUpVote] = useState(false);
     const [downVote, setDownVote] = useState(false);

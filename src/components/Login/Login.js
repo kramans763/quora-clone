@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./Login.css";
 import quora from "../../assets/quora-logo.jpg"
-import googleLogo from "../../assets/google-logo.png"
+
 import emailLogo from "../../assets/email-logo.png"
 import { TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
@@ -13,10 +13,6 @@ const Login = () => {
   const[inValidPassword,setInValidPassword]=useState(false);
   const navigate =useNavigate();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [url, setUrl] = useState("");
-  const [loginStatus, setLoginStatus] = useState(false);
 
 
   const onSubmit = async (data) => {
@@ -52,13 +48,7 @@ const Login = () => {
 const signupPage=()=>{
   navigate("/signup")
 }
-const responseGoogle = response => {
-  console.log(response);
-  setName(response.profileObj.name);
-  setEmail(response.profileObj.email);
-  setUrl(response.profileObj.imageUrl);
-  setLoginStatus(true);
-};
+
 
 return (
     <div className="mainPage">

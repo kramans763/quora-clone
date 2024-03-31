@@ -1,4 +1,4 @@
-import { GETPOSTS, GETCHANNELS, SETPOSTS } from "./Constants";
+
 const initialState = {
     posts:[],
     channels: [],

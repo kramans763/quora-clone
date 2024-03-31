@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "./Feed.css"
 import { getPosts } from '../../Action';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ const Feed = ({ searchResults, pageType }) => {
    
    const feedDetails = useSelector((state) => state.reducer.posts);
    const dispatch=useDispatch();
-   const authToken=localStorage.getItem('authToken');
+   
    const userData = JSON.parse(localStorage.getItem('userData'));
    
    console.log("feed", feedDetails);

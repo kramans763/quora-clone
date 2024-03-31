@@ -41,7 +41,7 @@ const AnswerPageDetail = () => {
 
   useEffect(() => {
     fetchPostData(); 
-  }, [id]);
+  }, [id, fetchPostData]);
   const openPopup = (title, id) => {
     setSelectedTitle(title);
     setSelectedId(id);

@@ -107,7 +107,7 @@ const Answer = () => {
                   <GoPencil/>
                  </div>
                  <div className='answer-page-right-bottom  dark:bg-neutral-800 dark:text-zinc-400'>
-                  <img src="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.empty_states.dormant_lightmode.png-26-c4532c98034818a0.png" alt="" />
+                  <img src="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.empty_states.dormant_lightmode.png-26-c4532c98034818a0.png" alt="bbb" />
                   <p>No topics yet</p>
                   <p className='answer-page-right-bottom-para2'>You’ll get better questions if you add more specific topics.</p>
                   <button onClick={handleUnderConstruction}>Add Topics</button>

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 import { BiPlusCircle } from "react-icons/bi";
 import { FaChevronLeft } from "react-icons/fa6";
 import QuoraLogo2 from "../../assets/quora-logo-png_4.png"
 function MobileNavbarTop(){
-       const userData = JSON.parse(localStorage.getItem('userData'));
+    
       
         const[searchClicked,setSearchClicked]=useState(false);
         const [searchTerm, setSearchTerm] = useState('');

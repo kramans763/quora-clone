@@ -8,7 +8,6 @@ const AddQuestion = () => {
   const [newQuestionTitle, setNewQuestionTitle] = useState('');
   const [newQuestionContent, setNewQuestionContent] = useState('');
   const [newQuestionImage, setNewQuestionImage] = useState();
-  const [contents, setContents] = useState([]);
   const [imageUrl, setImageUrl] = useState([]);
   const navigate=useNavigate();
 

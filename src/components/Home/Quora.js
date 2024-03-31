@@ -3,9 +3,9 @@ import Navbar from '../Navbar/Navbar'
 import "./Quora.css";
 import Sidebar from '../Sidebar/Sidebar'
 import Feed from '../Feed/Feed';
-import AdImg from '../../assets/advertisement.jpg'
+
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+
 
 const Quora = () => {
   const navigate = useNavigate();

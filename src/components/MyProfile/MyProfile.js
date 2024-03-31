@@ -26,7 +26,7 @@ const MyProfile = () => {
         setUserName(userData.name);
       }
     }
-  }, []);
+  }, [userData]);
 
   const handleLogout = () => {
 

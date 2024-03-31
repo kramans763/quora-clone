@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Quora from './components/Home/Quora';
-import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';

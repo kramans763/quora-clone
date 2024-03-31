@@ -17,11 +17,11 @@ import signTick from "../../assets/signTick.jpg"
   const[searchClicked,setSearchClicked]=useState(false);
   const[menuOpen,setMenuOpen]=useState(false);
   const[menuClicked,setMenuClicked]=useState('Home')
-  const[langClicked,setLangClicked]=useState(false)
+ 
   const userData = JSON.parse(localStorage.getItem('userData'));
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showUserInfo, setShowUserInfo] = useState(false);
-  const [userName, setUserName] = useState('');
+  // const [userName, setUserName] = useState('');
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   useEffect(() => {
     
@@ -31,9 +31,9 @@ import signTick from "../../assets/signTick.jpg"
       
       setIsLoggedIn(true);
       // const userData = JSON.parse(localStorage.getItem('userData'));
-      if (userData && userData.name) {
-        setUserName(userData.name);
-      }
+      // if (userData && userData.name) {
+      //   setUserName(userData.name);
+      // }
     }
   }, []);
 

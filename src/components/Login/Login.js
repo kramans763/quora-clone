@@ -78,22 +78,7 @@ return (
           </div>
 
           <div className="leftSideBtn">
-          {/* <GoogleLogin
-          clientId="671348139606-906f7lcl8vk6l26hivc1ka0hk2teuvb1.apps.googleusercontent.com"
-          buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={"single_host_origin"}
-         /> */}
-            {/* <button
-              type="submit"
-              className="loginBttn googleBttn"
-              
-            //   onClick={googleLogin}
-            >
-              <img src={googleLogo} alt="logo" className="googleLogo" />
-              Continue with Google
-            </button> */}
+       
             <button type="submit" className="signupBtn"
              onClick={signupPage}
              >
@@ -129,7 +114,7 @@ return (
 
            {inValidPassword?<p className='error-text' >Enter Valid Password</p>:''}
             <div className="loginContainer">
-              <p className="forgotPassword">Forgot Password?</p>
+              
               <button
                 type="submit"
                 className="loginBttn"
@@ -141,23 +126,22 @@ return (
         </div>
       </div>
       <div className="language">
-        <span className="languageColor">हिन्दी &gt;</span>{" "}
-        <span className="languageColor">मराठी &gt;</span>
+        <span className="languageColor"><a href="https://hi.quora.com/join?code=0&join_source=1&ref"> हिन्दी </a></span>  
       </div>
       <div className="loginFooter">
-        <span className="footerLogin">About</span>
+        <span className="footerLogin"> <a href="https://www.quora.com/about"> About </a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Careers</span>
+        <span className="footerLogin"> <a href="https://www.careers.quora.com/">Careers </a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Privacy</span>
+        <span className="footerLogin"> <a href="https://www.quora.com/about/privacy">Privacy </a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Terms</span>
+        <span className="footerLogin"> <a href="https://www.quora.com/about/tos">Terms</a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Contact</span>
+        <span className="footerLogin"> <a href="https://help.quora.com/hc/en-us/requests/new">Contact </a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Languages</span>
+        <span className="footerLogin"><a href="https://www.quora.com/about/languages">Languages</a></span>
         <span>&#8901;</span>
-        <span className="footerLogin">Your Ad Choices</span>
+        <span className="footerLogin"> <a href="https://www.quora.com/about/your_ad_choices">Your Ad Choices</a></span>
         <span>&#8901;</span>
         <span className="footerLogin">&copy; Quora-Clone</span>
       </div>

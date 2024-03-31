@@ -6,7 +6,7 @@ import emailLogo from "../../assets/email-logo.png"
 import { TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();

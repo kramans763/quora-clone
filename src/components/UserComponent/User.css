@@ -22,7 +22,7 @@
 }
 .userComponent-left-top{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 20px;
     align-items: center;
     padding-bottom: 10px;

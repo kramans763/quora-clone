@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
    
-    background-image: url("https://quora-clone-coral.vercel.app/static/media/background.cd7aa8c58fb4683b2f2a.png");
+    background-image: url("https://qsf.cf2.quoracdn.net/-4-images.Illustration_fb_share_default_1280x720.png-26-7b8bc71e8107b6f5.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,7 +139,7 @@
 .loginContainer {
     padding: 10px 0px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 .loginContainer button{

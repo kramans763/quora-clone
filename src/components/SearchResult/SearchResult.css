@@ -8,7 +8,7 @@
 }
 .search-page-top{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 15px;
     background-color: white;
     padding: 10px;

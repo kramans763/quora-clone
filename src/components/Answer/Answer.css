@@ -54,7 +54,7 @@
 }
 .answer-heading{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 15px 5px;
     gap: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
